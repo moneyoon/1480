@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hy-人机认证</title>
+    <title>Hy-登录</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -39,22 +39,29 @@
         nav a:hover {
             text-decoration: underline;
         }
-        .check-container {
+        .login-container {
             background-color: white;
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 400px;
-            text-align: center;
         }
         h1 {
             color: #333;
+            text-align: center;
             margin-bottom: 20px;
         }
         h4 {
             color: #555;
-            margin: 15px 0 20px;
+            margin: 15px 0 5px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
         button {
             width: 100%;
@@ -64,7 +71,7 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 20px;
             font-size: 1em;
         }
         button:hover {
@@ -76,37 +83,16 @@
     </style>
 </head>
 <body>
-    <h3><a href="index.html">Hy-网</a></h3>
+    <h3><a href="index.html">Hy-登录</a></h3>
     <hr>
-    <div class="check-container">
-        <h1>别担心,我们正在对您进行人机检测...</h1>
-        <h4>请完成以下验证步骤</h4>
-        <input type="text" id="verify-text" placeholder="输入 'wobushijiqiren'" style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
-        <button id="verify-btn" style="position: relative; overflow: hidden;">长按3秒验证</button>
-        <script>
-            const verifyText = document.getElementById('verify-text');
-            const verifyBtn = document.getElementById('verify-btn');
-            let pressTimer;
-
-            verifyBtn.addEventListener('mousedown', () => {
-                if (verifyText.value === 'wobushijiqiren') {
-                    pressTimer = setTimeout(() => {
-                        alert('验证成功！');
-                        window.location.href = 'login.html';
-                    }, 2000);
-                } else {
-                    alert('请先正确输入验证文本！');
-                }
-            });
-
-            verifyBtn.addEventListener('mouseup', () => {
-                clearTimeout(pressTimer);
-            });
-
-            verifyBtn.addEventListener('mouseleave', () => {
-                clearTimeout(pressTimer);
-            });
-        </script>
-    </div>
-</body>
+    <div class="login-container">
+        <h1>登录</h1>
+        <h4>用户名</h4>
+        <input type="text" value="" placeholder="用户名" name="vwind">
+        <h4>密码</h4>
+        <input type="password" value="" placeholder="密码" name="vwind">
+        <a href="main.html"><button>登录</button></a>
+        <a href="register.html" style="color: #4285f4; text-decoration: none; display: block; text-align: center; margin-top: 15px;">没有账号?点击前往注册</a>
+      </div>
+  </body>
 </html>
